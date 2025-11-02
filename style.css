@@ -115,4 +115,43 @@ button:disabled {
 
 #form-link:hover { 
     background-color: #005fa3; /* ボタンと同じホバー色 */
+
+}
+
+@media (max-width: 768px) {
+    /* 画面幅が768px以下 (タブレットやスマホ) の場合に適用 */
+
+    body {
+        margin: 0.5rem; /* 画面端の余白を減らす */
+    }
+
+    .panel {
+        padding: 20px 15px; /* 白いパネルの余白を減らす */
+        width: 95%;         /* 画面いっぱいになりすぎないように */
+    }
+
+    #task-display {
+        font-size: 1.6rem;  /* タスク名の文字を小さく */
+        min-height: 80px;   /* 高さを確保 */
+        margin-bottom: 10px;
+    }
+
+    #nexttask-display {
+        font-size: 1.1rem;  /* 次のタスクの文字を小さく */
+        min-height: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    #time-display {
+        font-size: 4.5rem; /* タイマー(MM:SS)の文字を
+                           大幅に小さく (これがはみ出しの主原因) 
+                         */
+        margin-bottom: 20px;
+    }
+
+    /* ボタンとリンクの文字も少し小さく */
+    button, #form-link {
+        font-size: 1rem;
+        padding: 0.6em 1em;
+    }
 }
