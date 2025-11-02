@@ -118,40 +118,60 @@ button:disabled {
 
 }
 
-@media (max-width: 768px) {
-    /* 画面幅が768px以下 (タブレットやスマホ) の場合に適用 */
+@media (max-width: 800px) and (orientation: portrait) {
+    /* 主に「スマートフォン・タブレットの縦向き」を想定
+    */
 
     body {
-        margin: 0.5rem; /* 画面端の余白を減らす */
+        margin: 0.5rem;
     }
-
     .panel {
-        padding: 20px 15px; /* 白いパネルの余白を減らす */
-        width: 95%;         /* 画面いっぱいになりすぎないように */
+        padding: 20px 15px;
+        width: 95%;
     }
-
     #task-display {
-        font-size: 1.6rem;  /* タスク名の文字を小さく */
-        min-height: 80px;   /* 高さを確保 */
-        margin-bottom: 10px;
+        font-size: 1.6rem;
+        min-height: 80px;
     }
-
     #nexttask-display {
-        font-size: 1.1rem;  /* 次のタスクの文字を小さく */
-        min-height: 1.5em;
-        margin-bottom: 10px;
+        font-size: 1.1rem;
     }
-
     #time-display {
-        font-size: 4.5rem; /* タイマー(MM:SS)の文字を
-                           大幅に小さく (これがはみ出しの主原因) 
-                         */
+        font-size: 4.5rem; /* 縦向きなら 4.5rem でも入る */
         margin-bottom: 20px;
     }
-
-    /* ボタンとリンクの文字も少し小さく */
     button, #form-link {
         font-size: 1rem;
-        padding: 0.6em 1em;
     }
 }
+
+@media (max-width: 900px) and (orientation: landscape) {
+    /* 主に「スマートフォンを横向きにした」状態を想定
+      (横幅900px以下で、かつ横向きの場合)
+    */
+
+    body {
+        margin: 0.5rem;
+    }
+    .panel {
+        padding: 15px 10px; /* 余白をさらに減らす */
+        width: 95%;
+    }
+    #task-display {
+        font-size: 1.4rem;  /* 縦向きよりさらに小さく */
+        min-height: 60px;
+        margin-bottom: 5px; /* 下の余白を詰める */
+    }
+    #nexttask-display {
+        font-size: 1.0rem;
+        margin-bottom: 5px; /* 下の余白を詰める */
+    }
+    #time-display {
+        font-size: 3.5rem; /* 横向きはタイマーを大幅に小さく */
+        margin-bottom: 15px;
+    }
+    button, #form-link {
+        font-size: 0.9rem; /* ボタンも小さく */
+    }
+}
+
