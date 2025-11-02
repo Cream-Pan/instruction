@@ -1,0 +1,118 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: clamp(14px, 1.6vw, 16px);
+    margin: 1rem;
+    background-color: rgb(241, 241, 226);
+    color: #333;
+    
+    /* 以前のCSSから中央配置のスタイルを流用 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+h1 {
+    font-style: bold;
+    color: #46a15f;
+    text-align: center; /* 中央揃えを追加 */
+}
+
+.controls {
+    margin-bottom: 1.5em;
+    display: flex; 
+    gap: 8px; 
+    flex-wrap: wrap;
+    justify-content: center; /* ボタンを中央揃え */
+}
+
+button {
+    padding: 0.6em 1.2em; /* 少しパディングを調整 */
+    margin-right: 0.8em;
+    margin-bottom: 0.8em;
+    border: none;
+    border-radius: 6px;
+    background-color: #46a15f;
+    color: #fff;
+    font-size: 1.1rem; /* 少しフォントサイズを調整 */
+    cursor: pointer;
+    transition: background-color 0.3s; /* ホバー効果のため追加 */
+}
+
+button:hover { 
+    background-color: #005fa3; 
+}
+
+button:disabled { 
+    opacity: 0.5; 
+    cursor: not-allowed; 
+}
+
+.panel { 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    background: #fff; 
+    
+    /* 以前のCSSからレイアウトを流用 */
+    text-align: center;
+    padding: 40px 60px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    width: 90%;
+    max-width: 800px;
+}
+
+.panel h2 { 
+    margin-top: 0; 
+}
+
+/* === タイマー専用 (以前のCSSから) === */
+
+#task-display {
+    font-size: 2.5rem; 
+    font-weight: 600;
+    color: #46a15f; /* 新しいCSSのテーマカラーに変更 */
+    min-height: 120px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#time-display {
+    font-size: 7rem; 
+    font-weight: 700;
+    color: #333; 
+    font-variant-numeric: tabular-nums; 
+    margin-bottom: 30px;
+}
+
+/* ダウンロードボタンを初期状態では非表示にする */
+#download-button {
+    display: none;
+}
+
+/* Googleフォームリンクのスタイル */
+#form-link {
+    /* 既存の <button> スタイルを参考に適用 */
+    display: none; /* ★初期状態は非表示 */
+    text-decoration: none;
+    padding: 0.6em 1.2em;
+    margin-right: 0.8em;
+    margin-bottom: 0.8em;
+    border: none;
+    border-radius: 6px;
+    background-color: #46a15f; /* ボタンと同じ色 */
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#form-link:hover { 
+    background-color: #005fa3; /* ボタンと同じホバー色 */
+}
